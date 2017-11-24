@@ -1,0 +1,11 @@
+C:\Users\Simas\Documents\Visual Studio 2017\Projects\RecipeApi\RecipeApi\bin\Debug\netcoreapp2.0\RecipeApi.deps.json
+C:\Users\Simas\Documents\Visual Studio 2017\Projects\RecipeApi\RecipeApi\bin\Debug\netcoreapp2.0\RecipeApi.runtimeconfig.json
+C:\Users\Simas\Documents\Visual Studio 2017\Projects\RecipeApi\RecipeApi\bin\Debug\netcoreapp2.0\RecipeApi.runtimeconfig.dev.json
+C:\Users\Simas\Documents\Visual Studio 2017\Projects\RecipeApi\RecipeApi\bin\Debug\netcoreapp2.0\RecipeApi.dll
+C:\Users\Simas\Documents\Visual Studio 2017\Projects\RecipeApi\RecipeApi\obj\Debug\netcoreapp2.0\RecipeApi.csprojResolveAssemblyReference.cache
+C:\Users\Simas\Documents\Visual Studio 2017\Projects\RecipeApi\RecipeApi\obj\Debug\netcoreapp2.0\RecipeApi.csproj.CoreCompileInputs.cache
+C:\Users\Simas\Documents\Visual Studio 2017\Projects\RecipeApi\RecipeApi\obj\Debug\netcoreapp2.0\RecipeApi.AssemblyInfoInputs.cache
+C:\Users\Simas\Documents\Visual Studio 2017\Projects\RecipeApi\RecipeApi\obj\Debug\netcoreapp2.0\RecipeApi.AssemblyInfo.cs
+C:\Users\Simas\Documents\Visual Studio 2017\Projects\RecipeApi\RecipeApi\bin\Debug\netcoreapp2.0\RecipeApi.pdb
+C:\Users\Simas\Documents\Visual Studio 2017\Projects\RecipeApi\RecipeApi\obj\Debug\netcoreapp2.0\RecipeApi.dll
+C:\Users\Simas\Documents\Visual Studio 2017\Projects\RecipeApi\RecipeApi\obj\Debug\netcoreapp2.0\RecipeApi.pdb
