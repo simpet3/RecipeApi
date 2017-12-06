@@ -26,5 +26,11 @@ namespace RecipeApi.Repositories
         {
             return  dbContext.Set<TEntity>().FirstOrDefault(e => e.Id == id);
         }
+        public virtual IQueryable<TEntity> Query()
+        {
+            return dbContext.Set<TEntity>();
+        }
+
+
     }
 }

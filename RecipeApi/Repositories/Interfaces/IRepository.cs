@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using RecipeApi.Shared.Models;
 
 namespace RecipeApi.Repositories.Interfaces
@@ -12,6 +13,7 @@ namespace RecipeApi.Repositories.Interfaces
         TEntity Edit(TEntity entity);
         void Delete(TEntity entity);
         void SaveChanges();
+        DbContext getDbContext();
 
     }
 }

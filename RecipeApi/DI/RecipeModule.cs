@@ -14,7 +14,7 @@ namespace RecipeApi.DI
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<RecipesService>().As<IBaseService<Recipe>>();
-            builder.RegisterType<ComponentsService>().As<IBaseService<Component>>();
+            builder.RegisterType<CategoryService>().As<IBaseService<Category>>();
         }
     }
 }

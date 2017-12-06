@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using RecipeApi.Entities;
 using RecipeApi.Repositories.Interfaces;
 using RecipeApi.Services.Interfaces;
@@ -39,9 +40,9 @@ namespace RecipeApi.Services
 
         public IEnumerable<Recipe> GetAll()
         {
-            recipesRepository.SaveChanges();
-            
-            return recipesRepository.GetAll();
+           // recipesRepository.SaveChanges();
+            return recipesRepository.Query().Include(b => b.Type).ToList();
+            //return recipesRepository.GetAll();
         }
 
         public Recipe Update(long id, Recipe recipe)
@@ -50,11 +51,14 @@ namespace RecipeApi.Services
             
             if (recipeFromDb != null && recipe != null)
             {
+                recipeFromDb.Type = getCategory(recipe.Type.Id);
                 recipeFromDb.Components = recipe.Components;
                 recipeFromDb.Title = recipe.Title;
-                recipeFromDb.Author = recipe.Author;
+                recipeFromDb.Likes = recipe.Likes;
+                recipeFromDb.shortDescription = recipe.shortDescription;
+               // recipeFromDb.Author = recipe.Author;
                 recipeFromDb.Description = recipe.Description;
-                recipeFromDb.Type = recipe.Type;
+                //recipeFromDb.Type = recipe.Type;
                 recipesRepository.SaveChanges();
                 return recipeFromDb;
             }
@@ -66,12 +70,42 @@ namespace RecipeApi.Services
         {
             if (recipe != null)
             {
-                 recipesRepository.Add(recipe);
+                if (categoryExists(recipe))
+                {
+                    atachRecipeDb(recipe);
+                }
+                else
+                {
+
+                    recipesRepository.Add(recipe);
+                }
+                
+                
                 recipesRepository.SaveChanges();
                 return recipesRepository.GetAll().Last();
 
             }
             return null;
+        }
+
+        //private Boolean authorExists(Recipe recipe)
+        //{
+        //   return  recipesRepository.getDbContext().Set<Account>().FirstOrDefault(x => x.Id == recipe.Author.Id)!=null ;
+        //}
+        private Boolean categoryExists(Recipe recipe)
+        {
+            return recipesRepository.getDbContext().Set<Category>().FirstOrDefault(x => x.Id == recipe.Type.Id) != null;
+        }
+
+        public void atachRecipeDb(Recipe recipe)
+        {
+            recipesRepository.getDbContext().Set<Recipe>().Attach(recipe);
+            
+        }
+
+        private Category getCategory(long Id)
+        {
+            return recipesRepository.getDbContext().Set<Category>().FirstOrDefault(x => x.Id == Id);
         }
     }
 }

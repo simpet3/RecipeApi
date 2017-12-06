@@ -42,7 +42,7 @@ namespace RecipeApi.ControllerBase
             {
                 return NotFound();
             }
-            return Json(rec);
+            return Ok(rec);
         }
 
         // GET: api/Recipe/5

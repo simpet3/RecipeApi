@@ -17,10 +17,12 @@ namespace RecipeApi.Repositories
 
         public void Add(TEntity entity)
         {
-            //dbContext.Set<TEntity>().Add(entity);
+
+            //var entry = dbContext.Entry(entity);
+            // dbContext.Set<TEntity>().AddAsync(entity);
             var entry = dbContext.Entry(entity);
              dbContext.Set<TEntity>().AddAsync(entity);
-            
+
         }
 
 
@@ -43,6 +45,10 @@ namespace RecipeApi.Repositories
         public void SaveChanges()
         {
             dbContext.SaveChanges();
+        }
+        public DbContext getDbContext()
+        {
+            return this.dbContext;
         }
     }
 }

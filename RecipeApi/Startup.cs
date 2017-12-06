@@ -31,6 +31,8 @@ namespace RecipeApi
             services.AddDbContext<RecipesDbContext>(opt => opt.UseInMemoryDatabase("RecipesDb"));
             services.AddMvc();
 
+            services.AddCors();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
@@ -53,6 +55,12 @@ namespace RecipeApi
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
+
+            app.UseCors(builder =>
+                builder.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials());
 
 
             app.UseMvc();

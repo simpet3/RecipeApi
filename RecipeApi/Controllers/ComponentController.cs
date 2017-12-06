@@ -10,13 +10,13 @@ using RecipeApi.ControllerBase;
 
 namespace RecipeApi.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/Component")]
-    public class ComponentController : ControllerBase<Component>
-    {
-        public ComponentController(IBaseService<Component> baseService) : base(baseService)
-        {
+    //[Produces("application/json")]
+    //[Route("api/Component")]
+    //public class ComponentController : ControllerBase<Component>
+    //{
+    //    public ComponentController(IBaseService<Component> baseService) : base(baseService)
+    //    {
             
-        }
-    }
+    //    }
+    //}
 }
